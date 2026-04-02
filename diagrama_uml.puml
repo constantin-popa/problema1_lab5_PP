@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class QAplication
+class sender
+{
+    +message_queue
+    +trimite(content)
+}
+class convertor
+{
+    +continut
+    +html
+    +convert(nume_fisier)
+    +check_type(nume_fisier)
+}
+class app{
+    +text
+    +send_er: sender
+    +conv: Convertor
+    +fereastra: QWidget
+    +text_box: QLineEdit
+    +afisare: QTextEdit
+    +button1: QPushButton
+    +button2: QPushButton
+    +button3: QPushButton
+    +button4: QPushButton
+    +layout: QFormLayout
+    +open()
+    +button_browse()
+    +path_text_box()
+    +afisare_format_html(nume_fisier)
+}
+
+QAplication <|-- app
+app *.. convertor
+app *.. sender
+@enduml
